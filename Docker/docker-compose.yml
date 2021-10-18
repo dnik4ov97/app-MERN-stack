@@ -1,16 +1,16 @@
 version: "3.8"
 
 services:
-  whatsup:
-    image: whatsup
+  app-frontend:
+    image: app-frontend
     stdin_open: true
     ports:
       - "3000:3000"
     networks:
       - mern-app
 
-  server-backend:
-    image: server-backend
+  app-backend:
+    image: app-backend
     ports: 
       - "5001:5001"
     networks:
