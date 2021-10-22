@@ -1,0 +1,37 @@
+.grid-container {
+    margin: 10% auto;
+}
+
+.grid {
+    /* white-space: pre; */
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.node {
+    background: white;
+    border: 1px solid rgb(146, 218, 240);
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 25px;
+    height: 20px;
+    margin-right: -1px;
+    margin-top: -3px;
+    padding: 0;
+    text-align: center;
+    width: 20px;
+    /* width: 20px;
+    height: 20px;
+    outline: 1pt solid rgb(149, 202, 243);
+    display: inline-block; */
+}
+.node:focus {
+    outline: none;
+}
+
+.coordinate {
+    text-align: center;
+    margin-top: 10px;
+}

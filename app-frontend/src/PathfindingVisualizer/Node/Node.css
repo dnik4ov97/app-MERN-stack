@@ -1,0 +1,19 @@
+.node {
+    width: 20px;
+    height: 20px;
+    outline: 1pt solid rgb(149, 202, 243);
+    display: inline-block;
+    /* outline: ; */
+}
+
+.node-finish {
+    background-color: red;
+}
+
+.node-start {
+    background-color: green;
+}
+
+.node-wall {
+    background-color: rgb(12, 53, 71);
+}
