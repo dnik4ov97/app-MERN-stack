@@ -21,7 +21,7 @@ mongoose.connect(connection_url, {
 });
 
 // API Endpoints
-app.get("/", (req, res) => res.status(200).send("HELLO CLEVER PROGRAMMERS!!"));
+app.get("/", (req, res) => res.status(200).send("Application Backend server!!"));
 
 app.post('/app/user',  (req, res) => {
     const dbUser = req.body;
