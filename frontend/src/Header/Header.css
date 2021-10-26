@@ -1,0 +1,10 @@
+.header {
+    background: #2C4052;
+}
+
+.title {
+    color: white;
+    font: bold 20px 'Helvetica Neue';
+    padding: 15px 15px;
+    display: inline-block;
+}

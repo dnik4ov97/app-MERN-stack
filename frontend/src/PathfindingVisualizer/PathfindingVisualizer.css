@@ -1,0 +1,39 @@
+/* container that has a height of 500px and 
+    has a width of 96% of the screen */
+.grid-container {
+    margin-left: 2%;
+    width: 96%;
+    height: 500px;
+}
+
+/* takes up all the space that is given from 
+    the container */
+.grid {
+    clear: both;
+    content: "";
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+/* details of each node */
+.node {
+    background: white;
+    border: 1px solid rgb(146, 218, 240);
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 25px;
+    height: 25px;
+    margin-right: -1px;
+    margin-top: 0px;
+    /* padding: 0; */
+    text-align: center;
+    width: 1.738%;
+}
+
+/* coordinates text details */
+.coordinate {
+    text-align: center;
+    margin: 10px;
+}
