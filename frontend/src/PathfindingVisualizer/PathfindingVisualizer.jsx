@@ -87,6 +87,7 @@ function PathfindingVisualizer (props) {
                         })}
                     </tbody>
                 </table>
+            <div></div>
         </div>
     );
 }
