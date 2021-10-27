@@ -1,5 +1,5 @@
 import React from "react";
-import './ButtonRun.css'
+import '../../styles/components/buttonRun.css'
 
 function ButtonRun(props){
     return (

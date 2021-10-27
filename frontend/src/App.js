@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import PathfindingVisualizer from './PathfindingVisualizer/PathfindingVisualizer';
-import Header from './Header/Header'
+import PathfindingVisualizer from './components/PathfindingVisualizer';
+import Header from './components/Header/Header'
 function App(){
   return (
     <div className="App">

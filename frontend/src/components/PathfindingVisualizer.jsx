@@ -1,6 +1,8 @@
 // imported useState and useEffect because Hooks are used.
 import React, { useState, useEffect } from 'react';
-import './PathfindingVisualizer.css';
+import '../styles/components/grid.css'
+import '../styles/components/node.css'
+import '../styles/layout/coordinate-text.css'
 
 // Node function that returns a button with id, className, and onClick function
 function Node (props) {

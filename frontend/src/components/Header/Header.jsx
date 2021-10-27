@@ -1,8 +1,8 @@
 import React from "react";
-import DropdownMenu from "./DropdownMenu/DropdownMenu";
-import Button from "./Button/Button";
-import ButtonRun from "./ButtonRun/ButtonRun";
-import './Header.css'
+import DropdownMenu from "./DropdownMenu";
+import Button from "./Button";
+import ButtonRun from "./ButtonRun";
+import '../../styles/components/header.css'
 
 function Header(){
 
