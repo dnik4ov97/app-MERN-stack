@@ -5,8 +5,8 @@ import '../styles/components/node.css'
 import '../styles/layout/coordinate-text.css'
 
 // main function that builds the whole component
-function PathfindingVisualizer(props) {
-   
+function PathfindingVisualizer() {
+
     // Intializing each state variable
     const [grid, setGrid] = useState([]);
     const [currRow, setCurrRow] = useState(0);
@@ -18,24 +18,22 @@ function PathfindingVisualizer(props) {
 
     // Builds and sets the grid value
     useEffect(() => {
-        const grid = buildInitialGrid();
-        setGrid(grid);
-    }, []);
 
-    // Changes the currRow and currCol when a node button is clicked
-    function handleClick(col, row) {
-        setCurrRow(row);
-        setCurrCol(col);
-    };
-
-
-    // Creats an 2D initial grid object that stores a Node shell object into each (row, col)
-    function buildInitialGrid() {
-        return Array.from(Array(ROW_COUNT)).map((_, rowIndex) => {
+        // Creats an 2D initial grid object that stores a Node shell object into each (row, col)
+        const grid = Array.from(Array(ROW_COUNT)).map((_, rowIndex) => {
             return Array.from(Array(COLUMN_COUNT)).map((_, columnIndex) => {
                 return createNodeShell(rowIndex, columnIndex)
             })
         })
+
+        setGrid(grid);
+
+    }, []);
+
+    // Changes the currRow and currCol when a node is clicked on
+    function handleClick(col, row) {
+        setCurrRow(row);
+        setCurrCol(col);
     };
 
     // Creates a Node object with the passed in row and col values
@@ -47,7 +45,7 @@ function PathfindingVisualizer(props) {
     */
     const getTableRowElements = (row, rowIdx) => (<tr key={rowIdx}>{row.map(getNode)}</tr>);
 
-    // Generates a Node element
+    // Generate a Node element
     const getNode = (node) => {
         const { row, col } = node;
         return (
@@ -60,7 +58,7 @@ function PathfindingVisualizer(props) {
         )
     }
 
-    // return elements that displays the Coordinates and the Grid 
+    // return elements that displays the Coordinates info div and the grid containing all of the Node elements 
     return (
         <div>
             <div className="coordinate">Coordinates: (col, row) ({currCol},{currRow})</div>
@@ -82,7 +80,7 @@ function Node(props) {
     return (
         <button
             id={`node-${row}-${col}`}
-            className={`node`}
+            className="node"
             onClick={() => props.onClick()}
         ></button>
     );
