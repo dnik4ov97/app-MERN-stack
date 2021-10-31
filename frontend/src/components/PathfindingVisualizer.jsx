@@ -4,7 +4,6 @@ import '../styles/components/grid.css'
 import '../styles/components/node.css'
 import '../styles/layout/coordinate-text.css'
 
-// main function that builds the whole component
 function PathfindingVisualizer() {
 
     // Initializing each constant variable
@@ -22,12 +21,12 @@ function PathfindingVisualizer() {
     function getGrid() {
         
         // Creates a Node object with the passed in row and col values
-        const createNodeShell = (row, col) => { return { row, col } };
+        const node = (row, col) => { return { row, col } };
 
         // Creats an 2D initial grid object that stores a Node shell object into each (row, col)
         return Array.from(Array(ROW_COUNT)).map((_, rowIndex) => {
             return Array.from(Array(COLUMN_COUNT)).map((_, columnIndex) => {
-                return createNodeShell(rowIndex, columnIndex)
+                return node(rowIndex, columnIndex)
             })
         })
     }
