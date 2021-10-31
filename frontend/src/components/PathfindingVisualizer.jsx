@@ -7,37 +7,36 @@ import '../styles/layout/coordinate-text.css'
 // main function that builds the whole component
 function PathfindingVisualizer() {
 
+    // Initializing each constant variable
+    const ROW_COUNT = 20;
+    const COLUMN_COUNT = 60;
+
     // Intializing each state variable
     const [grid, setGrid] = useState([]);
     const [currRow, setCurrRow] = useState(0);
     const [currCol, setCurrCol] = useState(0);
 
-    // Initializing each constant variable
-    const ROW_COUNT = 20;
-    const COLUMN_COUNT = 60;
-
     // Builds and sets the grid value
-    useEffect(() => {
+    useEffect(() => { setGrid(getGrid) }, []);
+
+    function getGrid() {
+        
+        // Creates a Node object with the passed in row and col values
+        const createNodeShell = (row, col) => { return { row, col } };
 
         // Creats an 2D initial grid object that stores a Node shell object into each (row, col)
-        const grid = Array.from(Array(ROW_COUNT)).map((_, rowIndex) => {
+        return Array.from(Array(ROW_COUNT)).map((_, rowIndex) => {
             return Array.from(Array(COLUMN_COUNT)).map((_, columnIndex) => {
                 return createNodeShell(rowIndex, columnIndex)
             })
         })
-
-        setGrid(grid);
-
-    }, []);
+    }
 
     // Changes the currRow and currCol when a node is clicked on
     function handleClick(col, row) {
         setCurrRow(row);
         setCurrCol(col);
     };
-
-    // Creates a Node object with the passed in row and col values
-    const createNodeShell = (row, col) => { return { row, col } };
 
     /*
         Itterate throuch every column in the row, insert a Node element into each column
@@ -46,8 +45,8 @@ function PathfindingVisualizer() {
     const getTableRowElements = (row, rowIdx) => (<tr key={rowIdx}>{row.map(getNode)}</tr>);
 
     // Generate a Node element
-    const getNode = (node) => {
-        const { row, col } = node;
+    const getNode = nodeShell => {
+        const { row, col } = nodeShell;
         return (
             <Node
                 key={col}
@@ -55,7 +54,7 @@ function PathfindingVisualizer() {
                 row={col}
                 onClick={() => handleClick(col, row)}
             ></Node>
-        )
+        );
     }
 
     // return elements that displays the Coordinates info div and the grid containing all of the Node elements 
