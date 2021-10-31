@@ -20,15 +20,15 @@ function PathfindingVisualizer() {
 
     function getGrid() {
         
-        // Creates a Node object with the passed in row and col values
+        // Creates a node object with the passed in row and col values
         const node = (row, col) => { return { row, col } };
 
         // Creats an 2D initial grid object that stores a Node shell object into each (row, col)
         return Array.from(Array(ROW_COUNT)).map((_, rowIndex) => {
             return Array.from(Array(COLUMN_COUNT)).map((_, columnIndex) => {
-                return node(rowIndex, columnIndex)
+                return node(rowIndex, columnIndex);
             })
-        })
+        });
     }
 
     // Changes the currRow and currCol when a node is clicked on
@@ -41,11 +41,11 @@ function PathfindingVisualizer() {
         Itterate throuch every column in the row, insert a Node element into each column
         and then return the results as TableRow elements
     */
-    const getTableRowElements = (row, rowIdx) => (<tr key={rowIdx}>{row.map(getNode)}</tr>);
+    const getTableRowElements = (row, rowIdx) => (<tr key={rowIdx}>{row.map(getNodeElement)}</tr>);
 
     // Generate a Node element
-    const getNode = nodeShell => {
-        const { row, col } = nodeShell;
+    const getNodeElement = node => {
+        const { row, col } = node;
         return (
             <Node
                 key={col}
