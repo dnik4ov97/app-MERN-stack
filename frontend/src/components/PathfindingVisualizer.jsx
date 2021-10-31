@@ -64,16 +64,16 @@ function PathfindingVisualizer (props) {
     return (
         <div>
             <div className="coordinate">Coordinates: (col, row) ({currCol},{currRow})</div>
-                {/* grid is put into a table */}
-                <table className="grid-container">
-                    {/* no theader just tbody */}
-                    <tbody className="grid">
-                        {/* going through each row in grid */}
-                        {grid.map((row, rowIdx) => {
+                <table className="grid-container" /* grid is put into a table */ >
+                    <tbody className="grid" /* no theader just tbody */>
+                        {
+                        // going through each row in grid
+                        grid.map((row, rowIdx) => {
                             return (
                                 <tr key={rowIdx}>
-                                    {/* in each tr it goes through each node(col) in each row of the grid*/}
-                                    {row.map((node,nodeIdx) => {
+                                    {
+                                    // in each tr it goes through each node(col) in each row of the grid
+                                    row.map((node,nodeIdx) => {
                                         const {row, col} = node;
                                         return (
                                             <Node
