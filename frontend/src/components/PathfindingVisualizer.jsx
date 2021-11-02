@@ -83,37 +83,11 @@ function PathfindingVisualizer (props) {
         <div className="background">
             <div className="first-layer">3D Button</div>
             <div className="coordinate">Coordinates: (col, row) ({currCol},{currRow})</div>
-<<<<<<< HEAD
                 {/* grid is put into a table */}
                 <table className="grid-container">
                     {/* no theader just tbody */}
                     <tbody className="grid">
                         {grid.map(createEachRow)}
-=======
-                <table className="grid-container" /* grid is put into a table */ >
-                    <tbody className="grid" /* no theader just tbody */>
-                        {
-                        // going through each row in grid
-                        grid.map((row, rowIdx) => {
-                            return (
-                                <tr key={rowIdx}>
-                                    {
-                                    // in each tr it goes through each node(col) in each row of the grid
-                                    row.map((node,nodeIdx) => {
-                                        const {row, col} = node;
-                                        return (
-                                            <Node
-                                                key={nodeIdx}
-                                                col={col}
-                                                row={row}
-                                                onClick={() => handleClick(col, row)}
-                                            ></Node>
-                                        )
-                                    })}
-                              </tr>
-                           )
-                        })}
->>>>>>> b71ae25ca377517935c4a556dace268c162c170f
                     </tbody>
                 </table>
             <div></div>
