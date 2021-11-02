@@ -10,7 +10,7 @@ function Node (props) {
     return (
         <button
             id={`node-${row}-${col}`}
-            className={`node`}
+            className="node"
             onClick={() => props.onClick()}
         ></button>
     );
@@ -60,33 +60,34 @@ function PathfindingVisualizer (props) {
         setCurrCol(col);
     };
 
+    // two callbackFn
+
+    // callbackFn that runs through each row of the grid object
+    function createEachRow (row, rowIdx) {
+        return (
+            <tr key={rowIdx}>
+                {row.map(createColsOfNodesForEachRow)}
+            </tr>
+        );
+    }
+    // callbackFn creates a node for each col in the row
+    function createColsOfNodesForEachRow (node, nodeIdx) {
+        const {row, col} = node;
+        return (
+            <Node key={nodeIdx} col={col} row={row} onClick={() => handleClick(col, row)}/>
+        );
+    }
+
     // return elements that displays the Coordinates and the Grid 
     return (
-        <div>
+        <div className="background">
+            <div className="first-layer">3D Button</div>
             <div className="coordinate">Coordinates: (col, row) ({currCol},{currRow})</div>
                 {/* grid is put into a table */}
                 <table className="grid-container">
                     {/* no theader just tbody */}
                     <tbody className="grid">
-                        {/* going through each row in grid */}
-                        {grid.map((row, rowIdx) => {
-                            return (
-                                <tr key={rowIdx}>
-                                    {/* in each tr it goes through each node(col) in each row of the grid*/}
-                                    {row.map((node,nodeIdx) => {
-                                        const {row, col} = node;
-                                        return (
-                                            <Node
-                                                key={nodeIdx}
-                                                col={col}
-                                                row={row}
-                                                onClick={() => handleClick(col, row)}
-                                            ></Node>
-                                        )
-                                    })}
-                              </tr>
-                           )
-                        })}
+                        {grid.map(createEachRow)}
                     </tbody>
                 </table>
             <div></div>
