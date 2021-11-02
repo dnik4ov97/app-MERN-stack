@@ -41,10 +41,10 @@ function PathfindingVisualizer() {
         Itterate throuch every column in the row, insert a Node element into each column
         and then return the results as TableRow elements
     */
-    const getTableRowElements = (row, rowIdx) => (<tr key={rowIdx}>{row.map(getNodeElement)}</tr>);
+    const createTableRowElements = (row, rowIdx) => (<tr key={rowIdx}>{row.map(createNodeElement)}</tr>);
 
     // Generate a Node element
-    const getNodeElement = node => {
+    const createNodeElement = node => {
         const { row, col } = node;
         return (
             <Node
@@ -64,7 +64,7 @@ function PathfindingVisualizer() {
                 <tbody className="grid" /* no theader just tbody */>
                     {
                         // Itterate through each row and insert a Node element into each column
-                        grid.map(getTableRowElements)
+                        grid.map(createTableRowElements)
                     }
                 </tbody>
             </table>
