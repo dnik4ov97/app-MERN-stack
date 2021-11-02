@@ -81,12 +81,14 @@ function PathfindingVisualizer (props) {
     // return elements that displays the Coordinates and the Grid 
     return (
         <div className="background">
+            {/* 3D button with dark neumorphism */}
             <div className="first-layer">3D Button</div>
+            {/* Coordinates outputted and changed after each butto press */}
             <div className="coordinate">Coordinates: (col, row) ({currCol},{currRow})</div>
-                {/* grid is put into a table */}
+                {/* container for the grid */}
                 <table className="grid-container">
-                    {/* no theader just tbody */}
                     <tbody className="grid">
+                        {/* callbackFn is called for .map on grid */}
                         {grid.map(createEachRow)}
                     </tbody>
                 </table>
