@@ -9,9 +9,26 @@
     /* takes up all the space that is given from 
         the container */
     .grid {
-        clear: both;
-        content: "";
+        // clear: both;
+        // content: "";
         display: table;
         width: 100%;
         height: 100%;
+    }
+
+    .first-layer {
+        background-color: #2b3134;
+        box-shadow: -5px -5px 9px rgba($color: #717171, $alpha: 0.15),
+                    5px 5px 9px rgba($color: #000000, $alpha: 0.15);
+        color: white;
+        margin: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        margin-left: 40%;
+        margin-right: 40%;
+    }
+
+    .background {
+        background-color: #2B3134;
+        padding: 20px;
     }

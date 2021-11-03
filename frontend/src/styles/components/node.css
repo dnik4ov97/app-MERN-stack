@@ -1,16 +1,10 @@
 /* details of each node */
 .node {
-  background: white;
-  border: 1px solid #92daf0;
+  background: #2D3034;
+  border: 1px solid #9759F6;
   float: left;
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 25px;
-  height: 120%;
-  margin-right: -1px;
-  margin-top: -1px;
-  text-align: center;
-  width: 1.7%;
+  height: 160%;
+  width: 1.66%;
 }
 
 /*# sourceMappingURL=node.css.map */

@@ -4,6 +4,7 @@ import '../styles/components/grid.css'
 import '../styles/components/node.css'
 import '../styles/layout/coordinate-text.css'
 
+<<<<<<< HEAD
 // Node function that returns a button with id, className, and onClick function
 function Node (props) {
     const {col, row} = props;
@@ -15,51 +16,42 @@ function Node (props) {
         ></button>
     );
 }
+=======
+function PathfindingVisualizer() {
 
-// main function that builds the whole component
-function PathfindingVisualizer (props) {
-    // intializing each state variable
+    // Initializing each constant variable
+    const ROW_COUNT = 20;
+    const COLUMN_COUNT = 60;
+>>>>>>> 4f1304322e96eacf7f09aacd791d94459736680e
+
+    // Intializing each state variable
     const [grid, setGrid] = useState([]);
     const [currRow, setCurrRow] = useState(0);
     const [currCol, setCurrCol] = useState(0);
 
-    // initializing each constant variable
-    const ROW_COUNT = 20;
-    const COLUMN_COUNT = 60;
+    // Builds and sets the grid value
+    useEffect(() => { setGrid(getGrid) }, []);
 
-    // creats an 2D initial grid object that stores a Node object into each (row, col)
-    function buildInitialGrid (){
-        const initialGrid = [];
-        for (let row = 0; row < ROW_COUNT; row++){
-            const currentRow = [];
-            for(let col = 0; col < COLUMN_COUNT; col++){
-                currentRow.push(createNode(row, col))
-            }
-            initialGrid.push(currentRow);
-        }
-        return initialGrid;
-    };
+    function getGrid() {
+        
+        // Creates a node object with the passed in row and col values
+        const node = (row, col) => { return { row, col } };
 
-    // creates a Node object with the passed in row and col values
-    const createNode = (row , col) => {
-        return {
-            row,
-            col,
-        };
-    };
+        // Creats an 2D initial grid object that stores a Node shell object into each (row, col)
+        return Array.from(Array(ROW_COUNT)).map((_, rowIndex) => {
+            return Array.from(Array(COLUMN_COUNT)).map((_, columnIndex) => {
+                return node(rowIndex, columnIndex);
+            })
+        });
+    }
 
-    // builds and sets the grid value
-    useEffect(() => {
-        const grid = buildInitialGrid();
-        setGrid(grid);
-    }, []);
-
-    // changes the currRow and currCol when a node button is clicked
-    function handleClick (col, row) {
+    // Changes the currRow and currCol when a node is clicked on
+    function handleClick(col, row) {
         setCurrRow(row);
         setCurrCol(col);
     };
 
+<<<<<<< HEAD
     // two callbackFn
 
     // callbackFn that runs through each row of the grid object
@@ -79,12 +71,35 @@ function PathfindingVisualizer (props) {
     }
 
     // return elements that displays the Coordinates and the Grid 
+=======
+    /*
+        Itterate throuch every column in the row, insert a Node element into each column
+        and then return the results as TableRow elements
+    */
+    const createTableRowElements = (row, rowIdx) => (<tr key={rowIdx}>{row.map(createNodeElement)}</tr>);
+
+    // Generate a Node element
+    const createNodeElement = node => {
+        const { row, col } = node;
+        return (
+            <Node
+                key={col}
+                col={row}
+                row={col}
+                onClick={() => handleClick(col, row)}
+            ></Node>
+        );
+    }
+
+    // return elements that displays the Coordinates info div and the grid containing all of the Node elements 
+>>>>>>> 4f1304322e96eacf7f09aacd791d94459736680e
     return (
         <div className="background">
             {/* 3D button with dark neumorphism */}
             <div className="first-layer">3D Button</div>
             {/* Coordinates outputted and changed after each butto press */}
             <div className="coordinate">Coordinates: (col, row) ({currCol},{currRow})</div>
+<<<<<<< HEAD
                 {/* container for the grid */}
                 <table className="grid-container">
                     <tbody className="grid">
@@ -93,7 +108,29 @@ function PathfindingVisualizer (props) {
                     </tbody>
                 </table>
             <div></div>
+=======
+            <table className="grid-container" /* grid is put into a table */ >
+                <tbody className="grid" /* no theader just tbody */>
+                    {
+                        // Itterate through each row and insert a Node element into each column
+                        grid.map(createTableRowElements)
+                    }
+                </tbody>
+            </table>
+>>>>>>> 4f1304322e96eacf7f09aacd791d94459736680e
         </div>
+    );
+}
+
+// Node function that returns a button with id, className, and onClick function
+function Node(props) {
+    const { col, row } = props;
+    return (
+        <button
+            id={`node-${row}-${col}`}
+            className="node"
+            onClick={() => props.onClick()}
+        ></button>
     );
 }
 
