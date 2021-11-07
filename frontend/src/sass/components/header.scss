@@ -1,10 +1,19 @@
-.header {
-    background: #2C4052;
+    .header {
+    background: #2B3134;
+    border-bottom: 2px solid #423d3d;
+    box-shadow: 0px 3px 6px rgba($color: #060606, $alpha: 0.3);
+    display: flex; /* initializes a flex container */
+    flex-direction: row; /* establishes the main-axis that will go left to right */
+    flex-wrap: wrap; /* flex items will wrap onto multiple lines */
+    gap: 150px;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .title {
     color: white;
-    font: bold 20px 'Helvetica Neue';
-    padding: 15px 15px;
-    display: inline-block;
+    font: 20px 'Arial';
+    padding-left: 15px;
 }

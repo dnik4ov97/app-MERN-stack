@@ -1,9 +1,8 @@
 /* container that has a height of 60vh and 
     has a width of 96% of the screen */
 .grid-container {
-  margin-left: 2%;
-  width: 96%;
-  height: 60vh;
+  width: 100%;
+  height: 100%;
 }
 
 /* takes up all the space that is given from 
@@ -27,7 +26,39 @@
 
 .background {
   background-color: #2B3134;
-  padding: 20px;
+  height: 100vh;
+  margin-top: 50px;
+}
+
+.grid-shadow-box {
+  box-shadow: -5px -5px 2px rgba(113, 113, 113, 0.15), 5px 5px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  flex: auto;
+}
+
+.grid-and-table-of-contents {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  height: 90%;
+}
+
+.table-of-contents-shadow-box {
+  box-shadow: -5px -5px 2px rgba(113, 113, 113, 0.15), 5px 5px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  flex: 0.3;
+  color: white;
+  height: 50%;
+  margin-left: 20px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=grid.css.map */

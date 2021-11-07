@@ -7,7 +7,7 @@ import '../styles/layout/coordinate-text.css'
 function PathfindingVisualizer() {
 
     // Initializing each constant variable
-    const ROW_COUNT = 20;
+    const ROW_COUNT = 35;
     const COLUMN_COUNT = 60;
 
     // Intializing each state variable
@@ -56,20 +56,27 @@ function PathfindingVisualizer() {
     }
 
     // return elements that displays the Coordinates info div and the grid containing all of the Node elements 
-    return (
+   return (
         <div className="background">
-            {/* 3D button with dark neumorphism */}
-            <div className="first-layer">3D Button</div>
-            {/* Coordinates outputted and changed after each butto press */}
-            <div className="coordinate">Coordinates: (col, row) ({currCol},{currRow})</div>
-            <table className="grid-container" /* grid is put into a table */ >
-                <tbody className="grid" /* no theader just tbody */>
-                    {
-                        // Itterate through each row and insert a Node element into each column
-                        grid.map(createTableRowElements)
-                    }
-                </tbody>
-            </table>
+            <div className="coordinate" /* corrdinates outputted and changed after each button press */>
+                Coordinates: (col, row) ({currCol},{currRow})
+            </div>
+            
+            <div className="grid-and-table-of-contents">
+                <div className="table-of-contents-shadow-box">
+                    Table of Contents
+                </div>
+                <div className="grid-shadow-box">
+                    <table className="grid-container" /* grid is put into a table */ >
+                        <tbody className="grid" /* no theader just tbody */>
+                            {
+                                // Itterate through each row and insert a Node element into each column
+                                grid.map(createTableRowElements)
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     );
 }

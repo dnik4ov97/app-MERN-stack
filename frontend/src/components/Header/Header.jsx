@@ -1,43 +1,19 @@
 import React from "react";
-import DropdownMenu from "./DropdownMenu";
-import Button from "./Button";
-import ButtonRun from "./ButtonRun";
+// import DropdownMenu from "./DropdownMenu";
+// import Button from "./Button";
+// import ButtonRun from "./ButtonRun";
 import '../../styles/components/header.css'
 
 function Header(){
 
-    const arrSpeed = ["Slow", "Normal", "Fast"]
-
     return (
-        <div className="header">
-            {/* Title of the Application */}
-            <h2 className="title">Pathfinding Visualizer</h2>
-            
-            {/* Algorithms Dropdown Menu Button */}
-            <DropdownMenu name="Algorithms" id="algorithms"></DropdownMenu>
-
-            {/* Mazes & Patterns Dropdown Menu Button */}
-            <DropdownMenu name="Mazes & Patterns" id="mazesandpatterns"></DropdownMenu>
-
-            {/* Add Bomb Button */}
-            <Button name="Add Bomb"></Button>
-
-            {/* Visualize Button Run */}
-            <ButtonRun name="Visualize"></ButtonRun>
-
-            {/* Clear Board Button */}
-            <Button name="Clear Board"></Button>
-
-            {/* Clear Walls & Weights Button */}
-            <Button name="Clear Walls & Weights"></Button>
-
-            {/* Clear Path Button */}
-            <Button name="Clear Path"></Button>
-
-            {/* Speed Dropdown Menu */}
-            <DropdownMenu name="Speed" id="speed" content={arrSpeed}></DropdownMenu>
-
+        <div>
+            <div className="header">
+            <h1 className="title">Search Algorithms</h1>
+            {/* <h1 className="title">Coordiates: (0, 0)</h1> */}
+            </div>
         </div>
+
     );
 }
 
